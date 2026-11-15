@@ -1,0 +1,24 @@
+{
+  "modis": {
+    "records_represented": 106262,
+    "clusters": 72
+  },
+  "viirs": {
+    "records_represented": 510850,
+    "clusters": 75
+  },
+  "harmonized": {
+    "records_represented": 608543,
+    "clusters": 75
+  },
+  "2022_range_records": 68965,
+  "calendar_months_verified": 48,
+  "elapsed_seconds": 79.55,
+  "tests": {
+    "frontend": 12,
+    "backend": 8,
+    "type_check": "passed",
+    "production_build": "passed",
+    "visual_browser": "blocked by saved permission despite user approval"
+  }
+}

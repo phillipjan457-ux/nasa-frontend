@@ -1,0 +1,414 @@
+.archive-shell {
+  min-height: 100dvh;
+}
+.archive-shell > header {
+  margin-left: 208px;
+}
+.archive-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 208px;
+  z-index: 950;
+  border-right: 1px solid var(--border);
+  background: var(--sidebar);
+  padding: 30px 16px;
+  overflow-y: auto;
+}
+.archive-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.archive-nav-link {
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.archive-nav-link:hover {
+  background: var(--muted);
+}
+.archive-nav-link.is-active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.archive-main {
+  margin-left: 208px;
+  padding: 22px 28px;
+  max-width: 1700px;
+}
+.archive-main h1 {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+.archive-main h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.archive-main h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.archive-main p {
+  line-height: 1.65;
+}
+.archive-main .text-\[10px\],
+.archive-main .text-\[9px\] {
+  font-size: 12px;
+}
+.segmented-control {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--border);
+  background: var(--muted);
+  border-radius: 9px;
+}
+.segmented-control button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.segmented-control button[aria-pressed="true"] {
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: 0 1px 3px oklch(0 0 0 / 15%);
+}
+.archive-shell button:focus-visible,
+.archive-shell a:focus-visible,
+.archive-shell select:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+.archive-shell button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.archive-map-panel {
+  height: clamp(460px, calc(100dvh - 305px), 850px);
+}
+.map-filter-control {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 650;
+}
+.map-filter-control > button {
+  background: var(--card);
+  box-shadow: var(--shadow-float);
+}
+.map-filter-popover {
+  margin-top: 8px;
+  width: 290px;
+  max-width: calc(100vw - 64px);
+  max-height: min(440px, calc(100dvh - 370px));
+  overflow-y: auto;
+  background: var(--card);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-float);
+  padding: 16px;
+}
+.map-filter-fields {
+  display: block;
+}
+.map-filter-controls {
+  display: grid;
+  gap: 12px;
+}
+.map-filter-fields label {
+  display: grid;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.map-filter-fields select,
+.map-filter-fields input {
+  width: 100%;
+  min-width: 0;
+}
+.map-view-controls {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 500;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: calc(100% - 110px);
+}
+.map-view-controls .archive-button {
+  background: var(--card);
+  font-size: 12px;
+}
+.loading-spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  vertical-align: middle;
+  animation: archive-spin 0.8s linear infinite;
+}
+.loading-notice {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--muted);
+}
+@keyframes archive-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.map-loading-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 675;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.map-loading-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: var(--shadow-float);
+  font-size: 14px;
+  font-weight: 500;
+}
+.map-loading-message .loading-spinner {
+  width: 26px;
+  height: 26px;
+  border-width: 3px;
+}
+.fw-map .leaflet-archive-labels-pane {
+  filter: contrast(1.2);
+}
+.leaflet-tooltip.fw-tip {
+  max-width: 240px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.6;
+  box-shadow: var(--shadow-float);
+}
+.leaflet-tooltip-top.fw-tip::before {
+  border-top-color: var(--popover);
+}
+.fw-map .leaflet-control-zoom a {
+  background: var(--card);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+.fw-map .leaflet-control-attribution {
+  background: var(--card);
+  color: var(--foreground);
+  font-size: 10px;
+}
+.fw-map .leaflet-control-attribution a {
+  color: var(--primary);
+}
+.recharts-text {
+  fill: var(--muted-foreground);
+}
+.recharts-default-tooltip {
+  color: var(--foreground) !important;
+}
+:root:not(.dark) {
+  --map-surface: oklch(0.94 0.01 155);
+}
+@media (max-width: 900px) {
+  .archive-sidebar {
+    position: static;
+    width: auto;
+    padding: 10px 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .archive-sidebar > .eyebrow,
+  .archive-sidebar > p {
+    display: none;
+  }
+  .archive-sidebar nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .archive-nav-link {
+    white-space: nowrap;
+  }
+  .archive-shell > header,
+  .archive-main {
+    margin-left: 0;
+  }
+  .archive-shell > header {
+    position: static;
+  }
+  .archive-main {
+    padding: 16px;
+  }
+  .map-filter-popover {
+    max-height: 330px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner {
+    animation: none;
+  }
+}
+.year-grid-scroll {
+  overflow-x: auto;
+  padding: 5px;
+}
+.year-grid {
+  display: grid;
+  grid-template-columns: 95px repeat(31, minmax(16px, 1fr));
+  gap: 4px;
+  min-width: 750px;
+}
+.year-month-row {
+  display: contents;
+}
+.year-month-name {
+  font-size: 12px;
+  align-self: center;
+}
+.year-day-number {
+  font-size: 10px;
+  text-align: center;
+  color: var(--muted-foreground);
+}
+.year-day {
+  min-width: 0;
+  aspect-ratio: 1;
+  border-radius: 3px;
+  border: 1px solid color-mix(in oklab, var(--foreground) 12%, transparent);
+}
+.year-day:hover {
+  outline: 2px solid var(--foreground);
+  outline-offset: 1px;
+}
+.year-day.calendar-low,
+.year-activity-legend .calendar-low {
+  background: oklch(0.89 0.06 40);
+}
+.year-day.calendar-moderate,
+.year-activity-legend .calendar-moderate {
+  background: oklch(0.77 0.12 35);
+}
+.year-day.calendar-high,
+.year-activity-legend .calendar-high {
+  background: oklch(0.65 0.19 30);
+}
+.year-day.calendar-very-high,
+.year-activity-legend .calendar-very-high {
+  background: oklch(0.5 0.22 25);
+}
+.year-day.calendar-unknown,
+.year-activity-legend .calendar-unknown {
+  background: var(--muted);
+}
+.heatmap-legend {
+  position: absolute;
+  left: 12px;
+  bottom: 28px;
+  z-index: 550;
+  padding: 14px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--foreground);
+  font-size: 12px;
+  max-width: calc(100% - 60px);
+  box-shadow: var(--shadow-float);
+}
+.heatmap-legend > .flex {
+  flex-wrap: wrap;
+}
+
+/* Keep the trigger anchored; the popover does not size its container. */
+.map-filter-popover {
+  position: absolute;
+  right: 0;
+  top: 100%;
+}
+.sidebar-collapsed > header,
+.sidebar-collapsed .archive-main {
+  margin-left: 0;
+}
+.archive-sidebar[hidden] {
+  display: none;
+}
+.section-loading-container {
+  position: relative;
+  min-height: 200px;
+}
+.section-loading-container[aria-busy="true"] .year-grid-scroll {
+  visibility: hidden;
+}
+.coordinate-search {
+  position: absolute;
+  left: 12px;
+  top: 62px;
+  z-index: 640;
+  display: flex;
+  gap: 4px;
+  max-width: calc(100% - 110px);
+  flex-wrap: wrap;
+}
+.coordinate-search input {
+  width: 180px;
+  max-width: 100%;
+  background: var(--card);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px;
+}
+.coordinate-search [role="alert"] {
+  padding: 8px;
+  background: var(--card);
+  color: var(--destructive);
+}
+.mode-summary {
+  border-left: 3px solid var(--primary);
+  padding-left: 10px;
+}
+
+.page-content {
+  min-height: 450px;
+}
+.map-loading-overlay {
+  background: var(--background);
+  opacity: 0.95;
+}
+
+.panel > form.map-filter-fields > .map-filter-controls {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: end;
+}
+
+.page-content > .map-loading-overlay,
+.section-loading-container > .map-loading-overlay {
+  pointer-events: auto;
+}
+
+/* Background map requests keep the basemap and existing observations visible. */
+.map-loading-overlay.map-background-loading {
+  inset: 12px 12px auto auto;
+  background: transparent;
+  opacity: 1;
+}
+.map-background-loading .map-loading-message {
+  padding: 8px 12px;
+  font-size: 12px;
+}

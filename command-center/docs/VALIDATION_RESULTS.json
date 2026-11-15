@@ -1,0 +1,164 @@
+{
+  "records": 617112,
+  "rejected": 0,
+  "duplicates": 0,
+  "groups": 8569,
+  "group_statuses": {
+    "matched": 2751,
+    "possible": 5818
+  },
+  "candidates": 32614,
+  "outside_gates": 0,
+  "unassigned_region": 2563,
+  "year_sensor_counts": [
+    [
+      2022,
+      "MODIS",
+      11745
+    ],
+    [
+      2022,
+      "VIIRS",
+      57220
+    ],
+    [
+      2023,
+      "MODIS",
+      53128
+    ],
+    [
+      2023,
+      "VIIRS",
+      253388
+    ],
+    [
+      2024,
+      "MODIS",
+      23542
+    ],
+    [
+      2024,
+      "VIIRS",
+      104186
+    ],
+    [
+      2025,
+      "MODIS",
+      17847
+    ],
+    [
+      2025,
+      "VIIRS",
+      96056
+    ]
+  ],
+  "db_bytes": 488349696,
+  "sensitivity": [
+    {
+      "distance_km": 0.5,
+      "time_minutes": 15,
+      "reviewable_pairs": 3052,
+      "assigned_groups": 2299,
+      "matched": 631,
+      "possible": 1668
+    },
+    {
+      "distance_km": 1.0,
+      "time_minutes": 30,
+      "reviewable_pairs": 16908,
+      "assigned_groups": 8569,
+      "matched": 2751,
+      "possible": 5818
+    }
+  ],
+  "annual": [
+    {
+      "year": 2022,
+      "total": 68965,
+      "modis": 11745,
+      "viirs": 57220,
+      "matched": 282,
+      "possible": 643,
+      "modis_only": 10820,
+      "viirs_only": 56295,
+      "activity": 68040,
+      "modis_matched": 282,
+      "viirs_matched": 282,
+      "days_with_records": 365,
+      "first_date": "2022-01-01",
+      "last_date": "2022-12-31",
+      "change_pct": null
+    },
+    {
+      "year": 2023,
+      "total": 306516,
+      "modis": 53128,
+      "viirs": 253388,
+      "matched": 1964,
+      "possible": 4151,
+      "modis_only": 47013,
+      "viirs_only": 247273,
+      "activity": 300401,
+      "modis_matched": 1964,
+      "viirs_matched": 1964,
+      "days_with_records": 365,
+      "first_date": "2023-01-01",
+      "last_date": "2023-12-31",
+      "change_pct": 341.50646678424454
+    },
+    {
+      "year": 2024,
+      "total": 127728,
+      "modis": 23542,
+      "viirs": 104186,
+      "matched": 478,
+      "possible": 893,
+      "modis_only": 22171,
+      "viirs_only": 102815,
+      "activity": 126357,
+      "modis_matched": 478,
+      "viirs_matched": 478,
+      "days_with_records": 366,
+      "first_date": "2024-01-01",
+      "last_date": "2024-12-31",
+      "change_pct": -57.937223910706024
+    },
+    {
+      "year": 2025,
+      "total": 113903,
+      "modis": 17847,
+      "viirs": 96056,
+      "matched": 27,
+      "possible": 131,
+      "modis_only": 17689,
+      "viirs_only": 95898,
+      "activity": 113745,
+      "modis_matched": 27,
+      "viirs_matched": 27,
+      "days_with_records": 365,
+      "first_date": "2025-01-01",
+      "last_date": "2025-12-31",
+      "change_pct": -9.981243619269213
+    }
+  ],
+  "forecast_mae": {
+    "seasonal_naive": 9868.333333333334,
+    "seasonal_mean": 5781.090277777777
+  },
+  "automated_checks": [
+    "raw counts",
+    "zero exact duplicates",
+    "group conservation",
+    "all candidate hard gates",
+    "monthly/annual reconciliation",
+    "date filtering",
+    "sensitivity/default reconciliation"
+  ],
+  "tests": {
+    "frontend": 11,
+    "backend": 6,
+    "typescript": "passed",
+    "production_build": "passed",
+    "browser_visual": "not run: local origin approval declined"
+  }
+}
